@@ -70,7 +70,16 @@ public class TemperatureSeriesAnalysis {
         if (isEmpty()){
             throw new IllegalArgumentException();
         }
-        return findTempClosestToValue(Double.POSITIVE_INFINITY);
+        double tempEl;
+        double maximum = this.temperatureSeries[0];
+        for (int index = 1;index<this.temperatureSeries.length;index++){
+            tempEl = this.temperatureSeries[1];
+            if (tempEl > maximum){
+                maximum = tempEl;
+            }
+
+        }
+        return maximum;
     }
 
     public double findTempClosestToZero()

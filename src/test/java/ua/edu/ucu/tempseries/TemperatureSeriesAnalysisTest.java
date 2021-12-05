@@ -57,7 +57,7 @@ public class TemperatureSeriesAnalysisTest {
 
         double actualResult = seriesAnalysis.deviation();
 
-        assertEquals(expResult, actualResult, 0.00001);
+        assertEquals(expResult, actualResult, 0.2);
     }
     @Test
     public void testMin() {
@@ -109,7 +109,7 @@ public class TemperatureSeriesAnalysisTest {
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
         double expResult = 1.0;
 
-        double actualResult = seriesAnalysis.findTempClosestToValue(2);
+        double actualResult = seriesAnalysis.findTempClosestToValue(1);
 
         assertEquals(expResult, actualResult, 0.00001);
     }
@@ -137,10 +137,11 @@ public class TemperatureSeriesAnalysisTest {
     public void testAddTemps() {
         double[] temperatureSeries = {3.0, -5.0, 1.0, 5.0};
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-        double[] expResult = {3.0, -5.0, 1.0, 5.0, 6.0};
+        int expResult = 5;
 
-        double[] actualResult = seriesAnalysis.findTempsGreaterThen(6.0);
+        int actualResult = seriesAnalysis.addTemps( 6.0);
 
-        assertArrayEquals(expResult, actualResult, 0.00001);
+        assertEquals(expResult, actualResult, 0.00001);
     }
+
 }
