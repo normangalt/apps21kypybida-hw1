@@ -127,7 +127,7 @@ public class TemperatureSeriesAnalysisTest {
     public void testFindTempsGreaterThen() {
         double[] temperatureSeries = {3.0, -5.0, 1.0, 5.0};
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-        double[] expResult = {5.0, 3.0};
+        double[] expResult = {3.0, 5.0};
 
         double[] actualResult = seriesAnalysis.findTempsGreaterThen(2);
 

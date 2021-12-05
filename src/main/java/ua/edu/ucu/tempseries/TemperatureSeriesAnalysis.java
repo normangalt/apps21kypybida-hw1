@@ -73,7 +73,7 @@ public class TemperatureSeriesAnalysis {
         double tempEl;
         double maximum = this.temperatureSeries[0];
         for (int index = 1;index<this.temperatureSeries.length;index++){
-            tempEl = this.temperatureSeries[1];
+            tempEl = this.temperatureSeries[index];
             if (tempEl > maximum){
                 maximum = tempEl;
             }
@@ -91,7 +91,7 @@ public class TemperatureSeriesAnalysis {
         double tempEl;
         double closest = this.temperatureSeries[0];
         for (int index = 1;index<this.temperatureSeries.length;index++){
-            tempEl = this.temperatureSeries[1];
+            tempEl = this.temperatureSeries[index];
             if (Math.abs(tempEl - tempValue) < Math.abs(closest - tempValue)){
                 closest = tempEl;
             }
